@@ -35,8 +35,17 @@ body {
   margin-bottom: 5px;
 }
 
+#data {
+  margin: 10px 0 15px;
+}
+
+#genero {
+  margin: 8px 0 18px;
+}
+
 .form-control input {
-  border: 2px solid #f0f0f0;
+  border: 2px solid #ddcbcb;
+  background-color: white;
   display: block;
   border-radius: 10px;
   font-size: 14px;
@@ -45,7 +54,7 @@ body {
 }
 .form-control i {
   position: absolute;
-  top: 45px;
+  top: 38px;
   right: 10px;
   visibility: hidden;
 }
@@ -65,6 +74,7 @@ body {
   width: 100%;
   border-radius: 10px;
   padding: 10px;
+  margin: 2px;
 }
 
 .form-control.success input {
@@ -76,6 +86,7 @@ body {
 }
 
 .form-control.success i.fa-check-circle {
+  padding-bottom: 10px;
   color: #2ecc71;
   visibility: visible;
 }
