@@ -4,6 +4,8 @@ const cpf = document.getElementById("cpf");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const passwordConfirmation = document.getElementById("password-confirmation");
+const reset = document.getElementById("reset");
+const submit = document.getElementById("submit");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -17,6 +19,8 @@ function checkInputs() {
   const emailValue = email.value;
   const passwordValue = password.value;
   const passwordConfirmationValue = passwordConfirmation.value;
+  const resetValue = reset.value;
+  const submitValue = submit.value;
 
   if (usernameValue === "") {
     setErrorFor(username, "O nome é obrigatorio.");
@@ -42,8 +46,8 @@ function checkInputs() {
 
   if (passwordValue === "") {
     setErrorFor(password, "A senha é obrigatória.");
-  } else if (passwordValue.length < 7) {
-    setErrorFor(password, "A senha precisa ter no mínimo 7 caracteres. ");
+  } else if (passwordValue.length < 6) {
+    setErrorFor(password, "A senha precisa ter no mínimo 6 caracteres. ");
   } else {
     setSuccessFor(password);
   }
@@ -54,6 +58,16 @@ function checkInputs() {
     setErrorFor(passwordConfirmation, "As senhas não conferem.");
   } else {
     setSuccessFor(passwordConfirmation);
+  }
+
+  const formControls = form.querySelectorAll(".form-control");
+
+  const formIsValid = [...formControls].every((formControl) => {
+    return formControl.className === "form-control success";
+  });
+
+  if (formIsValid) {
+    alert("O formulário é Válido");
   }
 }
 
