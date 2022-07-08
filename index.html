@@ -17,7 +17,13 @@
       <form id="form" class="form">
         <div class="form-control">
           <label for="username">Nome</label>
-          <input type="text" name="nome" id="username" placeholder="Nome" />
+          <input
+            type="text"
+            name="nome"
+            id="username"
+            oninput=" checkInputs()"
+            placeholder="Nome"
+          />
           <i class="fas fa-exclamation-circle"></i>
           <i class="fas fa-check-circle"></i>
           <small>Mensagem de erro</small>
@@ -32,6 +38,7 @@
             pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
             \
             placeholder="xxx.xxx.xxx-xx"
+            oninput=" checkInputs()"
           />
           <i class="fas fa-exclamation-circle"></i>
           <i class="fas fa-check-circle"></i>
@@ -40,7 +47,12 @@
 
         <div class="form-control">
           <label for="email">Email</label>
-          <input type="text" id="email" placeholder="Email" />
+          <input
+            type="text"
+            id="email"
+            placeholder="Email"
+            oninput=" checkInputs()"
+          />
           <i class="fas fa-exclamation-circle"></i>
           <i class="fas fa-check-circle"></i>
           <small>Mensagem de erro</small>
@@ -51,14 +63,14 @@
           <input type="date" id="data" data-rules="required" /><br />
         </div>
 
-        <input type="radio" name="sexo" id="genero" value="M" " />
+        <input type="radio" name="sexo" id="genero" value="M" />
         <label>Masculino</label>
         <input type="radio" name="sexo" id="genero" value="F" />
         <label>feminino</label>
 
         <div class="form-control">
           <label for="password">Senha</label>
-          <input type="password" id="password" />
+          <input type="password" id="password" oninput=" checkInputs()" />
           <i class="fas fa-exclamation-circle"></i>
           <i class="fas fa-check-circle"></i>
           <small>Mensagem de erro</small>
@@ -66,14 +78,22 @@
 
         <div class="form-control">
           <label for="password-confirmation">Confirmação de Senha</label>
-          <input type="password" id="password-confirmation" />
+          <input
+            type="password"
+            id="password-confirmation"
+            onsubmit="checkInputs()"
+          />
           <i class="fas fa-exclamation-circle"></i>
           <i class="fas fa-check-circle"></i>
           <small>Mensagem de erro</small>
         </div>
 
-        <button type="submit" value="submit" id="submit">Enviar</button>
-        <button type="reset" value="Cancelar" id="reset">Cancelar</button>
+        <button type="submit" value="submit" id="submit" onclick="submit">
+          Enviar
+        </button>
+        <button type="reset" value="Cancelar" id="reset" onreset="Cancelar">
+          Cancelar
+        </button>
       </form>
     </div>
     <script

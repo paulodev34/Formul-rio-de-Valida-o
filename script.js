@@ -30,7 +30,7 @@ function checkInputs() {
 
   if (cpfValue === "") {
     setErrorFor(cpf, "O CPF é obrigatorio.");
-  } else if (cpfValue.length < 11) {
+  } else if (cpfValue.length == 3 || cpfValue.length == 7) {
     setErrorFor(cpf, "O CPF tem que ter 11 numeros");
   } else {
     setSuccessFor(cpf);
