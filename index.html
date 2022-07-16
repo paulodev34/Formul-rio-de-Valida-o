@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <meta charset="utf-8" />
     <meta name="description" content="Conteúdo do nosso site" />
     <meta name="keywords" content="palavras,separadas,por,vírgula" />
@@ -35,10 +35,8 @@
             type="text"
             id="cpf"
             maxlength="14"
-            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
-            \
+            onclick=" mask()"
             placeholder="xxx.xxx.xxx-xx"
-            oninput=" checkInputs()"
           />
           <i class="fas fa-exclamation-circle"></i>
           <i class="fas fa-check-circle"></i>
@@ -63,6 +61,7 @@
           <input type="date" id="data" data-rules="required" /><br />
         </div>
 
+        <label for="Genero">Genero</label><br />
         <input type="radio" name="sexo" id="genero" value="M" />
         <label>Masculino</label>
         <input type="radio" name="sexo" id="genero" value="F" />
@@ -81,7 +80,7 @@
           <input
             type="password"
             id="password-confirmation"
-            onsubmit="checkInputs()"
+            oninput="checkInputs()"
           />
           <i class="fas fa-exclamation-circle"></i>
           <i class="fas fa-check-circle"></i>
@@ -102,5 +101,7 @@
     ></script>
 
     <script type="text/javascript" src="script.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
   </body>
 </html>

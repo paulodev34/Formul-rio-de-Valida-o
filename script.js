@@ -2,10 +2,9 @@ const form = document.getElementById("form");
 const username = document.getElementById("username");
 const cpf = document.getElementById("cpf");
 const email = document.getElementById("email");
+const data = document.getElementById("data");
 const password = document.getElementById("password");
 const passwordConfirmation = document.getElementById("password-confirmation");
-const reset = document.getElementById("reset");
-const submit = document.getElementById("submit");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -17,10 +16,9 @@ function checkInputs() {
   const usernameValue = username.value;
   const cpfValue = cpf.value;
   const emailValue = email.value;
+  const dataValue = data.value;
   const passwordValue = password.value;
   const passwordConfirmationValue = passwordConfirmation.value;
-  const resetValue = reset.value;
-  const submitValue = submit.value;
 
   if (usernameValue === "") {
     setErrorFor(username, "O nome é obrigatorio.");
@@ -30,9 +28,9 @@ function checkInputs() {
 
   if (cpfValue === "") {
     setErrorFor(cpf, "O CPF é obrigatorio.");
-  } else if (cpfValue.length == 3 || cpfValue.length == 7) {
+  } else if (cpfValue.length < 11) {
     setErrorFor(cpf, "O CPF tem que ter 11 numeros");
-  } else {
+  } else if ($("#cpf").mask("999.999.999-99")) {
     setSuccessFor(cpf);
   }
 
@@ -60,15 +58,17 @@ function checkInputs() {
     setSuccessFor(passwordConfirmation);
   }
 
-  const formControls = form.querySelectorAll(".form-control");
-
+  const formControls = form.querySelectorAll(" .form-control");
+  const submit = form.querySelector("#submit");
   const formIsValid = [...formControls].every((formControl) => {
     return formControl.className === "form-control success";
   });
 
-  if (formIsValid) {
-    alert("O formulário é Válido");
-  }
+  submit.addEventListener("click", function () {
+    if (formIsValid) {
+      alert("O formulário foi nenviado");
+    }
+  });
 }
 
 function setErrorFor(input, message) {
