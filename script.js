@@ -60,6 +60,7 @@ function checkInputs() {
 
   const formControls = form.querySelectorAll(" .form-control");
   const submit = form.querySelector("#submit");
+  const reset = form.querySelector("#reset");
   const formIsValid = [...formControls].every((formControl) => {
     return formControl.className === "form-control success";
   });

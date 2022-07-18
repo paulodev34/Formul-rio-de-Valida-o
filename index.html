@@ -35,8 +35,8 @@
             type="text"
             id="cpf"
             maxlength="14"
-            onclick=" mask()"
-            placeholder="xxx.xxx.xxx-xx"
+            oninput="checkInputs()"
+            placeholder="CPF"
           />
           <i class="fas fa-exclamation-circle"></i>
           <i class="fas fa-check-circle"></i>
@@ -89,9 +89,6 @@
 
         <button type="submit" value="submit" id="submit" onclick="submit">
           Enviar
-        </button>
-        <button type="reset" value="Cancelar" id="reset" onreset="Cancelar">
-          Cancelar
         </button>
       </form>
     </div>
